@@ -1,29 +1,94 @@
-<ion-app>
-  <ion-split-pane contentId="main-content">
-    <ion-menu contentId="main-content" type="overlay">
-      <ion-content>
-        <ion-list id="inbox-list">
-          <ion-list-header>Inbox</ion-list-header>
-          <ion-note>hi@ionicframework.com</ion-note>
+<ion-content padding class="animated fadeIn login auth-page">
+  <div class="theme-bg"></div>
+  <div class="auth-content">
 
-          <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-            <ion-item routerDirection="root" [routerLink]="[p.url]" lines="none" detail="false" routerLinkActive="selected">
-              <ion-icon slot="start" [ios]="p.icon + '-outline'" [md]="p.icon + '-sharp'"></ion-icon>
-              <ion-label>{{ p.title }}</ion-label>
-            </ion-item>
-          </ion-menu-toggle>
-        </ion-list>
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <div class="logo"></div>
+      <h4 no-margin>
+        <ion-text color="light" class="fw700">
+          Ionic 4 Start Theme
+        </ion-text>
+      </h4>
+    </div>
 
-        <ion-list id="labels-list">
-          <ion-list-header>Labels</ion-list-header>
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Email
+        </ion-label>
+        <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <p ion-text class="text08">
+        <ion-text color="warning">
+          Required Field
+        </ion-text>
+      </p>
 
-          <ion-item *ngFor="let label of labels" lines="none">
-            <ion-icon slot="start" ios="bookmark-outline" md="bookmark-sharp"></ion-icon>
-            <ion-label>{{ label }}</ion-label>
-          </ion-item>
-        </ion-list>
-      </ion-content>
-    </ion-menu>
-    <ion-router-outlet id="main-content"></ion-router-outlet>
-  </ion-split-pane>
-</ion-app>
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Password
+        </ion-label>
+        <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text color="warning" class="text08">
+        <ion-text color="warning">
+          Required Field
+        </ion-text>
+        </p>
+    </form>
+
+    <p text-right class="paz">
+      <ion-text color="light">
+        <strong>Forgot Pass?</strong>
+      </ion-text>
+    </p>
+
+    <div>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="dark" tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Signin
+      </ion-button>
+
+      <p text-center>
+        <ion-text color="light">
+          Or Signin with:
+        </ion-text>
+      </p>
+
+      <ion-grid class="btn-group">
+        <ion-row>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" color="secondary">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" color="secondary">
+              <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" color="secondary">
+              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span class="paz" tappable>
+        <ion-text color="light">
+          New here? <strong>Sign Up</strong>
+        </ion-text>
+      </span>
+    </div>
+
+  </div>
+</ion-content>
